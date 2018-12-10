@@ -146,7 +146,7 @@ export class PaginaDetalleComponent implements OnInit {
     
     fruta.imagen = this.formulario.controls.imagen.value;
     fruta.cantidad = 0;
-    //fruta.colores = this.formulario.controls.colores.value;
+    fruta.colores = this.formulario.controls.colores.value;
 
     this.frutaService.add(fruta).subscribe(data =>{
       console.debug(data);

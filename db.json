@@ -70,6 +70,19 @@
         "Rojo"
       ],
       "id": 5
+    },
+    {
+      "nombre": "Manzana",
+      "precio": 1.4,
+      "calorias": 150,
+      "oferta": true,
+      "descuento": 30,
+      "imagen": "https://www.comenaranjas.com/images/stories/virtuemart/product/manzana-granny-smith.jpg",
+      "cantidad": 0,
+      "colores": [
+        "Verde"
+      ],
+      "id": 6
     }
   ]
 }
