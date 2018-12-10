@@ -21,10 +21,10 @@
               <tr *ngFor="let f of frutas">
                   <td>{{f.id}}</td>
                   <td>{{f.nombre}}</td>
-                  <td>{{f.precio}}</td>
-                  <td>{{f.calorias}}</td>
+                  <td>{{f.precio}}€</td>
+                  <td>{{f.calorias}}Kcal</td>
                   <td>{{f.oferta?'Si':'No'}}</td>
-                  <td>{{f.descuento}}</td>
+                  <td>{{f.descuento}}%</td>
                   <td>{{f.colores}}</td>
                   <td><img src="{{f.imagen}}" alt="imagen de la fruta {{ f.nombre }}" class="imagenTabla"></td>
                   <td class="text-center">

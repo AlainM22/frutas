@@ -11,7 +11,7 @@
       ],
       "oferta": true,
       "imagen": "http://padeladdict.com/wp-content/uploads/2012/12/platano2.jpg",
-      "descuento": 0,
+      "descuento": 15,
       "cantidad": 0
     },
     {
@@ -40,8 +40,36 @@
       ],
       "oferta": true,
       "imagen": "http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg",
-      "descuento": 0,
+      "descuento": 30,
       "cantidad": 0
+    },
+    {
+      "nombre": "Limón",
+      "precio": 1.5,
+      "calorias": 75,
+      "colores": [
+        "Verde",
+        "Amarillo"
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://i.pinimg.com/originals/c3/3e/a1/c33ea15a11c06ddb84fb8d9560d32808.png",
+      "cantidad": 0,
+      "id": 4
+    },
+    {
+      "nombre": "Melocotón",
+      "precio": 2.4,
+      "calorias": 200,
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "http://frutasfontellas.es/wp-content/uploads/2013/06/Melocoton-600.jpg",
+      "cantidad": 0,
+      "colores": [
+        "Amarillo",
+        "Rojo"
+      ],
+      "id": 5
     }
   ]
 }
