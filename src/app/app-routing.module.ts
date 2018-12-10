@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { GestorFrutasComponent } from './components/gestor-frutas/gestor-frutas.component';
 import { PaginaDetalleComponent } from './components/pagina-detalle/pagina-detalle.component';
-import { BackofficeComponent } from './components/backoffice/backoffice.component';
 import { LoginComponent } from './components/login/login.component';
 import { Page404Component } from './components/page404/page404.component';
 

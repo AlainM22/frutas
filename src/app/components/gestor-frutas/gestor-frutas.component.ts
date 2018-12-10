@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Fruta } from 'src/app/model/fruta';
 import { FrutaService } from 'src/app/providers/fruta.service';
+import { LoginService } from 'src/app/providers/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gestor-frutas',
@@ -11,7 +13,7 @@ export class GestorFrutasComponent implements OnInit {
 
   frutas: Fruta[];
 
-  constructor(public frutaService: FrutaService) { 
+  constructor(public frutaService: FrutaService, private loginService: LoginService, private router: Router) { 
     console.trace('GestorFrutasComponent constructor');
   }
 
@@ -33,6 +35,12 @@ export class GestorFrutasComponent implements OnInit {
       console.debug('data %o', data);
       this.recargarLista();
     })
+  }
+
+  logout(){
+    console.trace('AppComponent logout');
+    this.loginService.logout();
+    this.router.navigate(['login']);
   }
 
 }

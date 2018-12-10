@@ -13,9 +13,6 @@
     <div class="col-8">
             <span *ngIf="mensaje" class="p-3 mb-2 bg-danger text-white">{{mensaje}}</span>
             <div class="card mt-4">
-                <div class="card-header">
-                    <h2>Acceso Privado</h2>
-                </div>
                 <div class="card-body">
                     <form [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
                         <div class="form-group">
