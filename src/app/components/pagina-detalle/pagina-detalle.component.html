@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-11">
+
+        <div class="card">
+            <div class="card-header">
+              <h1>{{ id == -1? 'Fruta nueva' : fruta.nombre}}</h1>
+            </div>
+            <div class="card-body">
+
+                <form [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" formControlName="nombre" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la fruta">
+                        <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.precio.touched" class="form-text text-danger">Minimo 2 letras, Maximo 50 letras</small>
+                        <small *ngIf="formulario.controls.nombre.valid && formulario.controls.precio.touched" class="form-text text-success">Correcto</small> 
+                    </div>
+
+                    <div class="form-group">
+                        <label for="precio">Precio</label>
+                        <input type="number" formControlName="precio" class="form-control" id="precio" name="precio" placeholder="Precio de la fruta" step="0.1">
+                        <small *ngIf="formulario.controls.precio.invalid && formulario.controls.precio.touched" class="form-text text-danger">Minimo 0,1 €, Maximo 999 €</small>
+                        <small *ngIf="formulario.controls.precio.valid && formulario.controls.precio.touched" class="form-text text-success">Correcto</small>  
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calorias">Calorias</label>
+                        <input type="number" formControlName="calorias" class="form-control" id="calorias" name="calorias" placeholder="Calorias de la fruta" step="25">
+                        <small *ngIf="formulario.controls.calorias.invalid && formulario.controls.calorias.touched" class="form-text text-danger">Minimo 0,1 Kcal, Maximo 600 Kcal</small>
+                        <small *ngIf="formulario.controls.calorias.valid && formulario.controls.calorias.touched" class="form-text text-success">Correcto</small>  
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group ml-4 col-md-6">
+                            <input formControlName="oferta" class="form-check-input" type="checkbox" id="oferta">
+                            <label for="oferta">Oferta</label>
+                        </div>
+    
+                        <div [hidden]="!formulario.controls.oferta.value" class="form-group col-md-5">
+                            <input type="number" formControlName="descuento" class="form-control" id="descuento" name="descuento" placeholder="Descuento de la fruta" step="5">
+                            <small *ngIf="formulario.controls.descuento.invalid && formulario.controls.descuento.touched" class="form-text text-danger">Minimo 5 %, Maximo 90 %</small>
+                            <small *ngIf="formulario.controls.descuento.valid && formulario.controls.descuento.touched" class="form-text text-success">Correcto</small>  
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagen">Imagen</label>
+                        <input type="text" formControlName="imagen" class="form-control" id="imagen" name="imagen" placeholder="URL de imagen de la fruta">
+                        <small *ngIf="formulario.controls.imagen.invalid && formulario.controls.imagen.touched" class="form-text text-danger">Formato inadecuado, aceptamos: http(s?) ... (.png | .jpg | .jpeg)</small>
+                        <small *ngIf="formulario.controls.imagen.valid && formulario.controls.imagen.touched" class="form-text text-success">Correcto</small>  
+                        <img src="{{formulario.controls.imagen.value}}" alt="imagen destacada" class="mt-3 imagenForm"/>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </form>
+
+            </div><!-- .card-body -->
+        </div><!-- .card -->
+
+    </div><!-- .col-6 -->
+    
+</div><!-- .row -->
