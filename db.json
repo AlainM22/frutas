@@ -83,24 +83,6 @@
         "Verde"
       ],
       "id": 6
-    },
-    {
-      "nombre": "Limon",
-      "precio": 0.6,
-      "calorias": "25",
-      "oferta": false,
-      "descuento": 0,
-      "imagen": "https://www.dehesaelmilagro.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/i/limon-eco.jpg",
-      "cantidad": 0,
-      "colores": [
-        {
-          "color": "Verde"
-        },
-        {
-          "color": "Amarillo"
-        }
-      ],
-      "id": 7
     }
   ]
 }

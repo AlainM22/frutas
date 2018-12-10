@@ -13,10 +13,9 @@ import { BackofficeGuard } from './guards/backoffice.guard';
 
 const routes: Routes = [
     { path: 'comparador', component: ComparadorComponent},
-    { path: 'gestor-frutas', component: GestorFrutasComponent},
+    { path: 'gestor-frutas', component: GestorFrutasComponent, canActivate: [BackofficeGuard]},
     { path: 'login', component: LoginComponent},
     { path: 'pagina-detalle/:id', component: PaginaDetalleComponent},
-    { path: 'privado', component: GestorFrutasComponent, canActivate: [BackofficeGuard]},
     { path: '',  redirectTo: '/comparador',  pathMatch: 'full'},
     { path: '**', component: Page404Component }
 ];
