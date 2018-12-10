@@ -58,7 +58,7 @@ export class PaginaDetalleComponent implements OnInit {
           ]
         ),
         imagen: new FormControl(
-          "https://i.pinimg.com/originals/c3/3e/a1/c33ea15a11c06ddb84fb8d9560d32808.png",//valor inicial
+          "https://www.dehesaelmilagro.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/i/limon-eco.jpg",//valor inicial
           [//validaciones
             Validators.required,
             Validators.pattern('^(http(s?):\/\/).+(\.(png|jpg|jpeg))$')

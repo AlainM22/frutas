@@ -39,7 +39,7 @@
         "Verde"
       ],
       "oferta": true,
-      "imagen": "http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg",
+      "imagen": "https://viatec.do/wp-content/uploads/2011/11/strawberry-3.jpg",
       "descuento": 30,
       "cantidad": 0
     },
@@ -53,7 +53,7 @@
       ],
       "oferta": false,
       "descuento": 0,
-      "imagen": "https://i.pinimg.com/originals/c3/3e/a1/c33ea15a11c06ddb84fb8d9560d32808.png",
+      "imagen": "https://www.dehesaelmilagro.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/i/limon-eco.jpg",
       "cantidad": 0,
       "id": 4
     },
@@ -83,6 +83,24 @@
         "Verde"
       ],
       "id": 6
+    },
+    {
+      "nombre": "Limon",
+      "precio": 0.6,
+      "calorias": "25",
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://www.dehesaelmilagro.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/i/limon-eco.jpg",
+      "cantidad": 0,
+      "colores": [
+        {
+          "color": "Verde"
+        },
+        {
+          "color": "Amarillo"
+        }
+      ],
+      "id": 7
     }
   ]
 }
