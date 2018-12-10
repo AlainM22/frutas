@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
 
     //llamar al servicio
     if(this.loginService.login(u)){
-      this.router.navigate(['privado']);
+      this.router.navigate(['gestor-frutas']);
     }else{
       this.mensaje = "Credenciales no validas, por favor prueba de nuevo";
     }

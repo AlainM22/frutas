@@ -17,8 +17,8 @@ const routes: Routes = [
     { path: 'gestor-frutas', component: GestorFrutasComponent},
     { path: 'login', component: LoginComponent},
     { path: 'pagina-detalle/:id', component: PaginaDetalleComponent},
-    { path: 'privado', component: BackofficeComponent, canActivate: [BackofficeGuard]},
-    { path: '',  redirectTo: '/home',  pathMatch: 'full'},
+    { path: 'privado', component: GestorFrutasComponent, canActivate: [BackofficeGuard]},
+    { path: '',  redirectTo: '/comparador',  pathMatch: 'full'},
     { path: '**', component: Page404Component }
 ];
 

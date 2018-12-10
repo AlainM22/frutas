@@ -17,9 +17,6 @@ export class ComparadorComponent implements OnInit {
   cantidad: number;
   carrito: Fruta[];
 
-  /* FrutaService es @Injectable por lo cual debemos declararlo en el constructor, 
-    nunca haremos NEW y no usarlo dentro del constructor, mejor en ngOnInit */
-
   constructor(public frutaService: FrutaService) {
     console.trace('ComparadorComponent constructor');
     this.frutas = [];
