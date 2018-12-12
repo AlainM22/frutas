@@ -16,4 +16,15 @@ export class AppComponent {
   ngOnInit() {
     console.trace('AppComponent ngOnInit');
   }
+
+  isLogged(){
+    if (!this.loginService.isLogged()) {
+      return false;
+    }
+    return true;
+  }
+
+  logout(){
+    this.loginService.logout();
+  }
 }
