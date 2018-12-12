@@ -1,8 +1,29 @@
+<div class="row mb-3">
+    <div class="col-4">
+        <!--RADIO BUTTONS-->
+        <label class="radio-inline ml-2">
+            <input type="radio" name="filter" [(ngModel)]="filtro"  [value]="undefined" (ngModelChange)="seleccionarFrutas()">Todas
+        </label>
+        <label class="radio-inline ml-2">
+            <input type="radio" name="filter" [(ngModel)]="filtro"  [value]="true" (ngModelChange)="seleccionarFrutas()">En Oferta
+        </label>
+        <label class="radio-inline ml-2">
+            <input type="radio" name="filter" [(ngModel)]="filtro"  [value]="false" (ngModelChange)="seleccionarFrutas()">Sin Oferta
+        </label>
+    </div>
+    <div class="col-6">
+            <form>
+                    <input type="search" [(ngModel)]="txtBusqueda" [ngModelOptions]="{standalone: true}" (keyup)="buscar()" placeholder="Busca por nombre...">
+                    <i class="fa fa-search ml-2"></i>
+                </form>
+    </div>
+    <div class="col-2">
+        <a [routerLink]="['../pagina-detalle', -1 ]" class="btn btn-outline-primary btn-block">Crear</a>
+    </div>
+</div>
+
 <div class="row">
-  <div class="col-2">
-    <a [routerLink]="['../pagina-detalle', -1 ]" class="btn btn-outline-primary btn-block">Crear</a>
-  </div>
-  <div class="col-10">
+  <div class="col-12">
     <div class="table-wrapper-scroll-y">
       <table class="table">
           <thead>
@@ -19,7 +40,7 @@
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let f of frutas" destacar>
+              <tr *ngFor="let f of frutas | frutasOferta: filtro" destacar>
                   <td>{{f.id}}</td>
                   <td class="text-primary">{{f.nombre}}</td>
                   <td>{{f.precio}}€</td>
