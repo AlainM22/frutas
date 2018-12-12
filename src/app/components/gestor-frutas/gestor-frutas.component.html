@@ -56,6 +56,7 @@
               </tr>
           </tbody>
       </table>
+      <p *ngIf="(frutas | frutasOferta: filtro).length === 0" class="mt-2 text-info">No hay frutas que coincidan con el criterio de busqueda</p>
     </div><!-- .table-scroll -->
   </div><!-- .col-10 -->
     
