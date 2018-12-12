@@ -28,8 +28,8 @@ export class ComparadorComponent implements OnInit {
     this.f1 = new Fruta();
     this.f2 = new Fruta();
 
-    this.precioTotal = 27.58;
-    this.cantidad = 3;
+    this.precioTotal = 0;
+    this.cantidad = 0;
     this.carrito = [];
 
     this.txtBusqueda = "";
@@ -57,37 +57,52 @@ export class ComparadorComponent implements OnInit {
     this.f1 = fruta;
   }
 
-  getTotal(): number{
-    let total = 0;
-    this.carrito.forEach( el => {
-      total += el.precio * el.cantidad;
-    })
-    return total;
+  getTotal(): void{
+    this.precioTotal = 0;
+    if (this.carrito.length > 0) {
+     
+      this.carrito.forEach(el => {
+        let precioFinal = 0;
+        if (el.oferta) {
+          precioFinal = el.cantidad * (el.precio - (el.precio * (el.descuento / 100)));
+        } else {
+          precioFinal = el.cantidad * el.precio;
+        }
+        
+        this.precioTotal += precioFinal;
+
+      });
+
+    } else {
+      this.precioTotal = 0;
+    }
   }
 
   sumarProducto(p: Fruta, index: number){    
-    p.cantidad++;
+    let ind = this.carrito.indexOf(p);
+    this.carrito[ind].cantidad++;
+
     if (p.oferta) {
-      const descuento = this.frutaRecibida.precio - this.frutaRecibida.precio * this.frutaRecibida.descuento / 100;
-      this.precioTotal += descuento;
+      this.precioTotal = p.cantidad * (p.precio - (p.precio * (p.descuento / 100)));
     } else {
-      this.precioTotal += p.precio;
+      this.precioTotal = p.cantidad * p.precio;
     }
-    this.carrito[index] = p;
+    this.getTotal();
   }
 
   restarProducto(p: Fruta, index: number){
-    p.cantidad -= 1;
-    if (p.cantidad < 1) {
-      p.cantidad = 1;
-    } else {
-      if (p.oferta) {
-        const descuento =  this.frutaRecibida.precio - this.frutaRecibida.precio * this.frutaRecibida.descuento / 100;
-        this.precioTotal -=  descuento;
-      } else {
-        this.precioTotal -= p.precio;
-      }
+    let ind = this.carrito.indexOf(p);
+    if (this.carrito[ind].cantidad > 1) 
+    {
+      this.carrito[ind].cantidad--;
     }
+
+    if (p.oferta) {
+      this.precioTotal = p.cantidad * (p.precio - (p.precio * (p.descuento / 100)));
+    } else {
+      this.precioTotal = p.cantidad * p.precio;
+    }
+    this.getTotal();
   }
 
   eliminarProducto(p: Fruta, index: number){
@@ -102,6 +117,8 @@ export class ComparadorComponent implements OnInit {
     let pos: number;
     pos = this.carrito.indexOf(p);
     this.carrito.splice(pos , 1);
+
+    this.getTotal();
   }
 
   actualizarCarro( event: Event) {
