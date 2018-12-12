@@ -20,13 +20,13 @@
 
 <div class="row">
 
-
     <div class="col-2 bg-light">
-        <ul class="list-group">
+        <ul class="list-group lista-frutas">
             <li *ngFor="let f of frutas | frutasOferta: filtro" 
                 (click)="seleccionar(f)" 
                 class="list-group-item" 
-                [class.active]="f == f1 || f == f2">{{f.nombre}}</li>         
+                [class.active]="f == f1 || f == f2">{{f.nombre}}
+            </li>         
         </ul>
     </div>
   
@@ -61,6 +61,6 @@
       </ul>
      </div> 
   
-  </div>
+</div>
 
 
