@@ -24,6 +24,9 @@ import { BackofficeGuard } from './guards/backoffice.guard';
 // Pipes
 import { FrutasOfertaPipe } from './pipes/frutas-oferta.pipe';
 
+// Directives
+import { DestacarDirective } from './directives/destacar.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,8 @@ import { FrutasOfertaPipe } from './pipes/frutas-oferta.pipe';
     GestorFrutasComponent,
     PaginaDetalleComponent,
     LoginComponent,
-    FrutasOfertaPipe
+    FrutasOfertaPipe,
+    DestacarDirective
   ],
   imports: [
     BrowserModule,

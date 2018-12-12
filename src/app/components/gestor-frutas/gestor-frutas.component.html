@@ -18,9 +18,9 @@
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let f of frutas">
+              <tr *ngFor="let f of frutas" destacar>
                   <td>{{f.id}}</td>
-                  <td class="text-success">{{f.nombre}}</td>
+                  <td class="text-primary">{{f.nombre}}</td>
                   <td>{{f.precio}}€</td>
                   <td>{{f.calorias}}Kcal</td>
                   <td class="text-center"><i class="{{f.oferta?'fas fa-check text-info':'fas fa-times text-danger'}}"></i></td>
