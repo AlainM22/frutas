@@ -21,6 +21,9 @@ import { LoginService } from './providers/login.service';
 // Guards
 import { BackofficeGuard } from './guards/backoffice.guard';
 
+// Pipes
+import { FrutasOfertaPipe } from './pipes/frutas-oferta.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,8 @@ import { BackofficeGuard } from './guards/backoffice.guard';
     ComparadorComponent,
     GestorFrutasComponent,
     PaginaDetalleComponent,
-    LoginComponent
+    LoginComponent,
+    FrutasOfertaPipe
   ],
   imports: [
     BrowserModule,

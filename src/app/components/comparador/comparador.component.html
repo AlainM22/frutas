@@ -1,9 +1,29 @@
+<div class="row mb-3">
+    <div class="col-6">
+      <!--RADIO BUTTONS-->
+      <label class="radio-inline ml-2">
+        <input type="radio" name="filter" [(ngModel)]="filtro"  [value]="undefined" (ngModelChange)="seleccionarFrutas()">Todas
+      </label>
+      <label class="radio-inline ml-2">
+        <input type="radio" name="filter" [(ngModel)]="filtro"  [value]="true" (ngModelChange)="seleccionarFrutas()">En Oferta
+      </label>
+      <label class="radio-inline ml-2">
+        <input type="radio" name="filter" [(ngModel)]="filtro"  [value]="false" (ngModelChange)="seleccionarFrutas()">Sin Oferta
+      </label>
+  
+      <form>
+          <input type="search" [(ngModel)]="txtBusqueda" [ngModelOptions]="{standalone: true}" (keyup)="buscar()" placeholder="Busca por nombre...">
+          <i class="fa fa-search ml-2"></i>
+      </form>
+  </div>
+</div>
+
 <div class="row">
 
 
     <div class="col-2 bg-light">
         <ul class="list-group">
-            <li *ngFor="let f of frutas" 
+            <li *ngFor="let f of frutas | frutasOferta: filtro" 
                 (click)="seleccionar(f)" 
                 class="list-group-item" 
                 [class.active]="f == f1 || f == f2">{{f.nombre}}</li>         
@@ -25,7 +45,8 @@
               <p>
                   <img src="{{p.imagen}}" alt="imagen de la fruta {{ p.nombre }}">
                   <span class="nombre">{{ p.nombre }}</span><br>
-                  <span class="precio">{{ p.precio | number:'1.2-2' }} €</span>
+                  <span *ngIf="!p.oferta" class="precio">{{ p.precio | number:'1.2-2' }} €</span>
+                  <span *ngIf="p.oferta" class="precio">{{p.precio - (p.precio*p.descuento)/100 | number:'1.2-2'}} €</span>
               </p>
               <p>
                   <button class="btn btn-primary" (click)="sumarProducto(p,i)">+</button>
