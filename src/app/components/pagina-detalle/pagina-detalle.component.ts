@@ -64,7 +64,7 @@ export class PaginaDetalleComponent implements OnInit {
             Validators.pattern('^(http(s?):\/\/).+(\.(png|jpg|jpeg))$')
           ]
         ),
-        colores: new FormArray([this.crearColorFormGroup()], Validators.minLength(1))
+        colores: new FormArray([this.crearColorFormGroup('')], Validators.minLength(1))
     });
 
     this.colores = this.formulario.get('colores') as FormArray;
@@ -98,18 +98,32 @@ export class PaginaDetalleComponent implements OnInit {
     this.formulario.controls.oferta.setValue(fruta.oferta);
     this.formulario.controls.descuento.setValue(fruta.descuento);
     this.formulario.controls.imagen.setValue(fruta.imagen);
+
+    const arrayColores = new FormArray([]) as FormArray;
+
+    this.fruta.colores.forEach(c => {
+      arrayColores.push(this.crearColorFormGroup(c));
+    });
+
+    this.formulario.setControl('colores' , arrayColores);
   }
 
-  crearColorFormGroup(): FormGroup{
+  crearColorFormGroup(nombre: string): FormGroup{
     return new FormGroup({
-      color: new FormControl('Verde', [Validators.required, Validators.minLength(2), Validators.maxLength(15)])
-    })
+      color: new FormControl(
+        nombre,
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(15)
+        ])
+    });
   }
 
-  nuevoColor(){
+  nuevoColor(nombre: string){
     console.trace('FormularioComponent nuevoColor');
     let aColores = this.formulario.get('colores') as FormArray;
-    aColores.push(this.crearColorFormGroup());
+    aColores.push(this.crearColorFormGroup(nombre));
   }
 
   eliminarColor(index: number){
